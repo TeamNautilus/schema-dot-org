@@ -10,7 +10,6 @@ module SchemaDotOrg
     validates :id, type: String, allow_nil: true
     validates :url, type: String, allow_nil: true
     validates :name, type: String, allow_nil: true
-    validates :image, type: String, allow_nil: true
     validates :description, type: String, allow_nil: true
 
     def _to_json_struct
