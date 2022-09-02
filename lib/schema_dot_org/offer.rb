@@ -13,14 +13,14 @@ module SchemaDotOrg
 
     validates :price_currency,       type: String
     validates :price,               type: Numeric, allow_nil: true
-    validates :availability,        type: String, allow_nil: true
+    validates :availability,        type: SchemaDotOrg::ItemAvailability, allow_nil: true
     validates :seller,              type: SchemaDotOrg::LocalBusiness, allow_nil: true
 
     def _to_json_struct
       super.merge({
           "price" => price,
           "priceCurrency" => price_currency,
-          "availability" => availability,
+          "availability" => availability&._to_json_struct,
           "seller" => seller&.to_json_struct,
       })
     end
