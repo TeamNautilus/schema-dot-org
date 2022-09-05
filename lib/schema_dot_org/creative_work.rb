@@ -10,7 +10,7 @@ module SchemaDotOrg
     attr_accessor :date_published, :author, :publisher, :offers, :headline
 
     validates :date_published,         type: Date, allow_nil: true
-    validates :author,                 type: Thing, allow_nil: true
+    validates :author,                 type: Person, allow_nil: true
     validates :publisher,                 type: Thing, allow_nil: true
     validates :offers,                      type: Array, allow_nil: true
 

@@ -9,6 +9,7 @@ require 'schema_dot_org/person'
 
 Article = SchemaDotOrg::Article
 Organization = SchemaDotOrg::Organization
+Person = SchemaDotOrg::Person
 
 RSpec.describe Article do
   describe "#new" do
@@ -29,8 +30,7 @@ RSpec.describe Article do
         date_published: Date.new(2021, 3, 30),
         image: 'https://image.url/image.png',
         url: 'https://article.url/article',
-        author: Organization.new(name: 'Acme',
-                                 logo: 'https://acme.url/logo.png'),
+        author: Person.new(name: 'Acme'),
         publisher: Organization.new(name: 'Acme',
                                     logo: 'https://acme.url/logo.png')
       )
@@ -43,9 +43,8 @@ RSpec.describe Article do
                                           "image" => 'https://image.url/image.png',
                                           "url" => "https://article.url/article",
                                           "author" => {
-                                            "@type" => "Organization",
-                                            "name" => "Acme",
-                                            "logo" => "https://acme.url/logo.png"
+                                            "@type" => "Person",
+                                            "name" => "Acme"
                                           },
                                           "publisher" => {
                                             "@type" => "Organization",
