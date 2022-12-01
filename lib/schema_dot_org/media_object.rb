@@ -8,7 +8,7 @@ module SchemaDotOrg
   class MediaObject < CreativeWork
     attr_accessor :contentUrl
 
-    validates :contentUrl, type: String
+    validates :contentUrl, type: String,   allow_nil: true
 
     def _to_json_struct
       super.merge({
