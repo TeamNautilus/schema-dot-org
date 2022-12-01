@@ -6,6 +6,14 @@ require 'schema_dot_org'
 #
 module SchemaDotOrg
   class MediaObject < CreativeWork
+    attr_accessor :contentUrl
 
+    validates :contentUrl, type: String
+
+    def _to_json_struct
+      super.merge({
+                    "contentUrl" => contentUrl
+                  })
+    end
   end
 end
