@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 require 'schema_dot_org/schema'
 require 'schema_dot_org/schema_type'
+require_relative 'validate_object_multiple_type_patch'
 require 'schema_dot_org/thing'
 require 'schema_dot_org/intangible'
 require 'schema_dot_org/enumeration'
