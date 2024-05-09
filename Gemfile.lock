@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    schema_dot_org (1.6.13)
+    schema_dot_org (1.6.15)
       validated_object (~> 2.0.2)
 
 GEM

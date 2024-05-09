@@ -11,13 +11,15 @@ module SchemaDotOrg
                   :offers,
                   :brand,
                   :review,
-                  :additional_property
+                  :additional_property,
+                  :category
 
-    validates :offers,                      type: SchemaDotOrg::AggregateOffer, allow_nil: true
+    validates :offers,                      type: SchemaDotOrg::Offer, allow_nil: true
     validates :aggregate_rating,            type: SchemaDotOrg::AggregateRating, allow_nil: true
     validates :brand,                       type: SchemaDotOrg::Thing, allow_nil: true
     validates :review,                      type: Array, allow_nil: true
     validates :additional_property,         type: Array, allow_nil: true
+    validates :category,                    type: String, allow_nil: true
 
     def _to_json_struct
       super.merge({
@@ -25,7 +27,8 @@ module SchemaDotOrg
           "offers" => offers&.to_json_struct,
           "brand" => brand&.to_json_struct,
           "review" => review&.map(&:to_json_struct),
-          "additionalProperty" => additional_property&.map(&:to_json_struct)
+          "additionalProperty" => additional_property&.map(&:to_json_struct),
+          "category" => category
       })
     end
   end
