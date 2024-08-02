@@ -6,11 +6,13 @@ require 'schema_dot_org'
 #
 module SchemaDotOrg
   class ImageObject < MediaObject
-    attr_accessor :caption
+    attr_accessor :caption, :width, :height
 
     def _to_json_struct
       super.merge({
-                    "caption" => caption
+                    "caption" => caption,
+                    "width" => width,
+                    "height" => height
                   })
     end
   end
