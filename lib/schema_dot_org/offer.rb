@@ -14,7 +14,7 @@ module SchemaDotOrg
     validates :price_currency,       type: String
     validates :price,               type: Numeric, allow_nil: true
     validates :availability,        type: SchemaDotOrg::ItemAvailability, allow_nil: true
-    validates :seller,              type: SchemaDotOrg::LocalBusiness, allow_nil: true
+    validates :seller,              type: { with: [SchemaDotOrg::LocalBusiness, SchemaDotOrg::Organization] }, allow_nil: true
 
     def _to_json_struct
       super.merge({
