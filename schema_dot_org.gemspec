@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "schema_dot_org"
-  spec.version       = '1.6.18'
+  spec.version       = '1.6.19'
   spec.authors       = ["Robb Shecter", "Nautilus"]
   spec.email         = ["robb@public.law"]
 
@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "validated_object", "~> 2.0.2"
 
-  spec.add_development_dependency "bundler", "~> 1.16"
+  spec.add_development_dependency "bundler", "~> 2.7"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
 end
